@@ -14,3 +14,13 @@ Thu 28 Mar 2024 02:48:34 PM UTC:
  tests:  2|5
 total_score: 15/70
 0b9541f
+Thu 28 Mar 2024 02:50:30 PM UTC: 
+ list.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘nextList’:
+list.c:50:57: error: expected expression before ‘>’ token
+   50 |   if (list == NULL || list->current == NULL || list-    >current->next == NULL)
+      |                                                         ^
+Compilation failed
+2b3b162
