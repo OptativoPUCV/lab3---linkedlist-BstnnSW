@@ -114,7 +114,24 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
+  if (list->current == NULL)
     return NULL;
+  void *data = list->current->data;
+  Node *PERUANO = list->current;
+  if (list->current == list->head) {
+    list->head = list->current->next;
+  } else {
+    list->current->prev->next = list->current->next;
+  }
+  if (list->current == list->tail) {
+    list->tail = list->current->prev;
+  } else {
+    list->current->next->prev = list->current->prev;
+  }
+  list->current = list->current->next;
+  free(PERUANO);
+  return data;
+  
 }
 
 void cleanList(List * list) {
